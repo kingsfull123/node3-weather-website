@@ -10,9 +10,7 @@ messageTwo.textContent = '';
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    let location = search.value;
-    let url = 'http://localhost:3000/weather?address=' + location;
-    fetch(url).then(response => {
+    fetch('/weather?address=' + location).then(response => {
         response.json().then(data => {
             if (data.error) {
                 // console.log(data.error);
